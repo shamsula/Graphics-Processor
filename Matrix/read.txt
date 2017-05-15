@@ -2,4 +2,5 @@ This was done using Processing3 (based on Java language)
 Download exe file for demo. enjoy
 
 
-So i wanted to recreate the matrix screen from the 1999 films, I got some help from the internet (obviously). Thanks to Daniel Shiffman's tutorials (namely purple rain for this one) - they are really helpful.
+So i wanted to recreate the matrix screen from the 1999 films, I got some help from the internet (obviously). 
+Thanks to Daniel Shiffman's tutorials (namely purple rain for this one) - they are really helpful.
