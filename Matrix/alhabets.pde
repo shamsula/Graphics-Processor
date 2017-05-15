@@ -30,9 +30,9 @@ class alpha{
    f = createFont("Arial Unicode MS Regular", map(z, 0, 20, 5, 25 ),true);
    textFont(f);
     if( y<disappear )
-    fill (255, 255 , 255, map(z,0,20,150,200)); 
+    fill (255, 255 , 255, map(z,0,20,150,200));  //the mapping is used to adjust opacity of the white character based on distance from the screen
     else if(y>disappear) fill(255, 255 , 255, 0);
-    else if(y>reappear ) fill(255, 255 , 255, 255);  //the mapping is used to adjust opacity based on distance from the screen
+    else if(y>reappear ) fill(255, 255 , 255, 255);  
   
    char c= (char) (0x3040 + random(0x54));
    text(main,x,y);
