@@ -6,6 +6,9 @@ class alpha{
  float length = map(z, 0, 20, 10, 20);  // map length from 0-20 (z length) to 10-20
  float ySpeed = map(z, 0, 20, 5, 15); 
  PFont f; 
+ char main= (char) (0x3040 + random(0x54));
+ float disappear= random(0,999);
+ float reappear = random(1000,1500);
  
  
  void fall() {
@@ -26,10 +29,13 @@ class alpha{
  void show () {
    f = createFont("Arial Unicode MS Regular", map(z, 0, 20, 5, 25 ),true);
    textFont(f);
-   fill(255, 255 , 255, map(z,0,20,150,200));  //the mapping is used to adjust opacity based on distance from the screen
+    if( y<disappear )
+    fill (255, 255 , 255, map(z,0,20,150,200)); 
+    else if(y>disappear) fill(255, 255 , 255, 0);
+    else if(y>reappear ) fill(255, 255 , 255, 255);  //the mapping is used to adjust opacity based on distance from the screen
   
    char c= (char) (0x3040 + random(0x54));
-   text(c,x,y);
+   text(main,x,y);
    textAlign((int)x);
    
    float ypos=y;
@@ -38,9 +44,13 @@ class alpha{
   
     //c= (char) (48 + random(0,47)); //english
     c= (char) (0x3041 + random(0x54)); //japanese
-    fill(51, 204 , 51, map(y,0,1920,250,0));
-     text(c,x,ypos-30);
-     ypos= ypos-30;
+    
+    if(y>500 && y <550)
+    fill(51, 204 , 51, 0);   //randomly make characters disappear
+    else fill(51, 204 , 51, map(y,0,1920,250,0));
+    
+     text(c,x,ypos- map(z,0,20,5,30));
+     ypos= ypos- map(z,0,20,5,30);
      textAlign((int)x);
    }
    
