@@ -38,6 +38,7 @@ class alpha{
   
     //c= (char) (48 + random(0,47)); //english
     c= (char) (0x3041 + random(0x54)); //japanese
+    fill(51, 204 , 51, map(y,0,1920,250,0));
      text(c,x,ypos-30);
      ypos= ypos-30;
      textAlign((int)x);
